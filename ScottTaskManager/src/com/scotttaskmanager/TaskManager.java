@@ -38,9 +38,12 @@ public class TaskManager {
 
 		String text = scanner.nextLine();
 
-		Task task = new Task(text);
+		if (text.length() != 0) {
 
-		tasks.add(task);
+			Task task = new Task(text);
+
+			tasks.add(task);
+		}
 
 	}
 
@@ -50,7 +53,7 @@ public class TaskManager {
 			File myObj = new File("MyTasks.txt");
 
 			if (myObj.createNewFile()) {
-				System.out.println("File successfully created :)");
+				// System.out.println("File successfully created :)");
 			} else {
 				System.out.println("File already Exists");
 			}
@@ -62,7 +65,7 @@ public class TaskManager {
 	}
 
 	public static void deleteFile() {
-		System.out.println("file deleted");
+
 		try {
 			Path fileToDeletePath = Paths.get("MyTasks.txt");
 			Files.delete(fileToDeletePath);
@@ -144,15 +147,11 @@ public class TaskManager {
 
 	public static void writeTasksToFile() {
 
-		System.out.println("writeStrListToFileFinal().........");
-		System.out.println("Press Enter");
-
 		FileWriter fw = null;
 		String line = "";
 
 		deleteFile();
-		System.out.println("file deleted.........");
-		System.out.println("Press Enter");
+
 		createNewFile();
 
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter("MyTasks.txt"))) {
