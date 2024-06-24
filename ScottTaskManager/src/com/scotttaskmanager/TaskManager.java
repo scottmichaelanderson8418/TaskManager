@@ -129,17 +129,13 @@ public class TaskManager {
 	public static String readAllLines(BufferedReader reader) throws IOException {
 		StringBuilder content = new StringBuilder();
 		String line;
-		PressEnter.pressEnter();
+
 		while ((line = reader.readLine()) != null) {
 			content.append(line);
 			content.append(System.lineSeparator());
 		}
 
-		PressEnter.pressEnter();
-
 		content.toString();
-
-		PressEnter.pressEnter();
 
 		return content.toString();
 
@@ -325,8 +321,6 @@ public class TaskManager {
 			pressEnterKeyToContinue();
 
 		}
-
-		PressEnter.pressEnter();
 
 	}
 
