@@ -117,13 +117,16 @@ public class Driver {
 			// Add task method in Task Manager.
 
 			TaskManager.addTask(scanner);
+			TaskManager.listTasks();
 
 		} else if (choice == 2) {
 			// Call the remove task method in Task Manager.
 			TaskManager.removeTask(scanner);
+			TaskManager.listTasks();
 		} else if (choice == 3) {
 			// Call the complete task method in Task Manager.
 			TaskManager.completeTask(scanner);
+			TaskManager.listTasks();
 		} else if (choice == 4) {
 			// TODO: call the list tasks method in Task Manager.
 			TaskManager.listTasks();
